@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>Cartolou</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>	
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+		.name {
+			font-weight: 700;
+		}		
+		.pontos {
+			font-weight: 700;
+		}
+    </style>
+</head>
+<body>
+	
+
+<div class="container">
+    
+
+	<div ng-app="myApp" ng-controller="pessoasController">
+		<div class="row">
+			<div class="col-xs-12">
+					<ul class="list-group" id="contact-list">
+						<li class="list-group-item" ng-repeat="t in times">
+							<div class="col-xs-1">
+								<img src="{{t.foto_perfil}}" alt="{{t.nome}}" class="img-responsive img-circle" width="30" />
+							</div>
+							<div class="col-xs-11">
+								<div class="col-xs-10">
+									<span class="name">{{t.nome}}</span>
+								</div>
+								<div class="col-xs-2">
+									<span class="pontos">{{t.pontos.rodada | number:2}}</span>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    </div>
+
+	<script type="text/javascript">
+	(function() {
+		var app = angular.module('myApp', []);
+		app.controller('pessoasController', function($scope, $http) {
+			$http({
+			  method: 'GET',
+			  url: '/login.php?api=liga&liga_slug=bbx-champions-league'
+			}).then(function successCallback(response) {
+				$scope.times = response.data.times;
+			});	
+		});
+	})();
+	</script>
+</body>
+</html>
+
+
+		
+	<script>
+
+	</script>
