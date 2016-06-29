@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
 $email = getenv('email');
-$password = getenv('password');
+$password = getenv('senha');
 $serviceId = 4728;
 
 $url = 'https://login.globo.com/api/authentication';
