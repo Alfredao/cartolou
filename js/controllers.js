@@ -11,7 +11,7 @@ angular.module('app.controllers', [])
 .controller('ligasCtrl', function($scope, $http) {
 	$http({
 	  method: 'GET',
-	  url: '/cartolou/api/liga.php'
+	  url: '/api/liga.php'
 	}).then(function successCallback(response) {
 		$scope.times = response.data.times;
 	});	
