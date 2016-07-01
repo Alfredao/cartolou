@@ -14,7 +14,7 @@ if (! $container->offSetExists('glbId')) {
 
 $slug      = 'bbx-champions-league';
 
-$url = "https://api.cartolafc.globo.com/auth/liga/" . $slug;
+$url = "https://api.cartolafc.globo.com/auth/liga/" . $slug . "orderBy=rodada";
 
 
 $c = curl_init();

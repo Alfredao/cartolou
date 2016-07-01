@@ -1,3 +1,17 @@
 <ion-view title="Parciais" id="page2" class=" ">
     <ion-content padding="true" class="has-header"></ion-content>
+        <form id="ligas-form2" class="list ">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="">
+            </label>
+        </form>
+		<div class="list" ng-repeat="jogador in jogadores">
+			<a class="item item-avatar" href="#">
+			  <img src="{{jogador.foto}}">
+			  <h2>{{jogador.apelido}}</h2>
+			  <p>{{jogador.nome}}</p>
+			  <span class="item-note pontuacao-jogador">{{jogador.pontos_num | number:2}}</span>			
+			</a>
+		</div>		
 </ion-view>
