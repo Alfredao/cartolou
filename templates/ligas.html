@@ -6,12 +6,12 @@
                 <input type="search" placeholder="">
             </label>
         </form>
-		<div class="list" ng-repeat="t in times">
+		<div class="list" ng-repeat="time in times">
 			<a class="item item-avatar" href="#">
-			  <img src="{{t.foto_perfil}}">
-			  <h2>{{t.nome}}</h2>
-			  <p>{{t.nome_cartola}}</p>
-			  <span class="item-note">{{t.pontos.rodada | number:2}}</span>			
+			  <img src="{{time.foto_perfil}}">
+			  <h2>{{time.nome}}</h2>
+			  <p>{{time.nome_cartola}}</p>
+			  <span class="item-note pontuacao-jogador">{{time.pontos.rodada | number:2}}</span>			
 			</a>
 		</div>		
     </ion-content>
