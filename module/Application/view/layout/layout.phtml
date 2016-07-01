@@ -19,6 +19,7 @@
 
         <!-- Scripts -->
         <?= $this->headScript()
+            ->prependFile('//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js')
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-2.2.4.min.js'))
         ?>
