@@ -6,10 +6,13 @@
                 <input type="search" placeholder="">
             </label>
         </form>
-        <ion-list id="ligas-list1" class=" ">
-            <ion-item class="item-thumbnail-left  " id="ligas-list-item4" ng-repeat="t in times">
-                <h2>{{t.nome}}</h2>
-            </ion-item>
-        </ion-list>
+		<div class="list" ng-repeat="t in times">
+			<a class="item item-avatar" href="#">
+			  <img src="{{t.foto_perfil}}">
+			  <h2>{{t.nome}}</h2>
+			  <p>{{t.nome_cartola}}</p>
+			  <span class="item-note">{{t.pontos.rodada | number:2}}</span>			
+			</a>
+		</div>		
     </ion-content>
 </ion-view>
