@@ -9,7 +9,13 @@ angular.module('app.controllers', [])
 	  method: 'GET',
 	  url: '/api/time.php'
 	}).then(function successCallback(response) {
-		$scope.jogadores = response.data.atletas;
+		var atletas = response.data.atletas;
+		var foto;
+		for (i in atletas) {
+			foto = atletas[i].foto
+			atletas[i].foto = foto.replace('FORMATO', '50x50');
+		}
+		$scope.jogadores = atletas;
 	});	
 })
    
